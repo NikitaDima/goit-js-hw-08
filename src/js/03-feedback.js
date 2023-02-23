@@ -18,6 +18,10 @@ function populateStorageValue(evt) {
 
 function onFormSubmit(evt) {
   evt.preventDefault();
+  if (textarea.value.trim() === '' || input.value.trim() === '') {
+    alert('Всі поля мають бути заповнені');
+    return;
+  }
   evt.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
   console.log(`email: ${feedbackFormData.email}`);
